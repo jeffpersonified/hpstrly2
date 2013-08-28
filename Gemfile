@@ -17,6 +17,8 @@ gem 'jquery-rails'
 gem 'compass-rails'
 gem 'zurb-foundation'
 
+gem 'rspec-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
