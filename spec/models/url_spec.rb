@@ -13,6 +13,6 @@ describe Url do
     end
   end
   describe "associations" do
-    pending "need users first"
+    it { should belong_to(:user) }
   end
 end
