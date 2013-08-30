@@ -1,0 +1,8 @@
+.row
+  .large-5.large-centered.columns.user_form
+    %h2 Resend unlock instructions
+    = simple_form_for resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post } do |f|
+      = devise_error_messages!
+      = f.input :email, :autofocus => true, as: :email, placeholder: "email"
+      = f.submit "Resend unlock instructions"
+    = render "devise/shared/links"

@@ -1,0 +1,8 @@
+.row
+  .large-5.large-centered.columns.user_form
+    %h2 Forgot your password?
+    = simple_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post } do |f|
+      = devise_error_messages!
+      = f.input :login, :autofocus => true, placeholder: "login"
+      = f.submit "Send me reset instructions", { class: "small-12 radius button" }
+    = render "devise/shared/links"

@@ -1,0 +1,28 @@
+.row
+  .large-5.large-centered.columns.user_form
+    %h2.hide Edit #{resource_name.to_s.humanize}
+    = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put } do |f|
+      = devise_error_messages!
+      = image_tag(resource.avatar_url) if resource.avatar?
+      = f.input :avatar, as: :file
+      = f.input :avatar_cache, as: :hidden
+      = f.input :email, as: :email, placeholder: "email"
+
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+      = f.input :username, placeholder: "username", placeholder: "username"
+
+      %i (we need your current password to confirm your changes)
+      = f.input :current_password, as: :password, placeholder: "current password"
+
+      %i (leave blank if you don't want to change it)
+      = f.input :password, as: :password, autocomplete: "off", placeholder: "change password?"
+      = f.input :password_confirmation, as: :password, placeholder: "confirm changed password"
+      = f.submit "Update", { class: "radius button small-12 large-12 columns" }
+
+    %h3.hide Cancel my account
+    %p
+      Unhappy?
+      = button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete,  class: "radius button secondary tiny"
+
+    = link_to "Back", :back

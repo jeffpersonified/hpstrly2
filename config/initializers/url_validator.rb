@@ -8,7 +8,7 @@ class UrlValidator < ActiveModel::Validator
   rescue
     # record.errors[:base] << "Choose a valid url. Yours was too obscure."
     # errors.add(:yyy,'discount with no business')
-    raise "Unable to remove business."
+    raise "Choose a valid url. Yours was too obscure."
   else
     true
   end
