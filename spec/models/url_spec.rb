@@ -12,6 +12,7 @@ describe Url do
       it { should have_db_column(:updated_at).of_type(:datetime) }
     end
     context "indices" do
+      debugger
       it { should have_db_index(:short_url) }
     end
   end
