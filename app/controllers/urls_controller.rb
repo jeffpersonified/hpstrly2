@@ -22,7 +22,7 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url = Url.new(params[:url])
+    @url = Url.new(url_params)
     @url.user = current_user
     respond_to do |format|
       if @url.save
@@ -51,6 +51,9 @@ private
   end
 
   def url_params
-    params.require(:url).permit(:original_url)
+    debugger
+    # params[:url].permit(:url)
+    params.require(:url).permit(:original_url, :short_url)
+    # params.require(:url).permit!
   end
 end

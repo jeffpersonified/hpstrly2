@@ -2,7 +2,7 @@
 
 = render 'form'
 
-- @urls.each do
+- @urls.each do |url|
   %span.short= url.short_url
   %span.original= url.original_url
-  %span.page_view= url.page_view_url
+  %span.page_view= url.page_views
