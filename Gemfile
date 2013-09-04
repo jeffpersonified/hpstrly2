@@ -26,6 +26,7 @@ end
 gem 'jbuilder', '~> 1.2'
 
 # frontend
+gem 'angularjs-rails'
 gem 'haml-rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.0'

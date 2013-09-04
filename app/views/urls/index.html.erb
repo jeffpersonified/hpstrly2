@@ -1,0 +1,10 @@
+<div ng-controller='UrlCtrl'>
+  <h1>New Url</h1>
+  <%= render 'form' %>
+  <h1>Urls</h1>
+  <ul>
+    <li ng-repeat="url in urls">
+      {{ url.original_url }}
+    </li>
+  </ul>
+</div>

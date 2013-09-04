@@ -1,8 +1,9 @@
 class UrlsController < ApplicationController
+  respond_to :json, :html
+
   before_action :set_by_short_url, only: [:show]
 
   def index
-    @url = Url.new
     if current_user
       @urls = Url.find_by(user_id: current_user.id)
     elsif session[:url_ids] && session[:url_ids].any?
@@ -10,10 +11,7 @@ class UrlsController < ApplicationController
     else
       @urls = []
     end
-  end
-
-  def new
-    @url = Url.new
+    respond_with(@urls)
   end
 
   def show
@@ -24,15 +22,13 @@ class UrlsController < ApplicationController
   def create
     @url = Url.new(url_params)
     @url.user = current_user
-    respond_to do |format|
-      if @url.save
-        set_url_in_session
-        format.html { redirect_to urls_path, notice: 'Url was successfully created.' }
-        format.json { render action: 'index', status: :created, location: @url }
-      else
-        format.html { render action: 'index' }
-        format.json { render json: @url.errors, status: :unprocessable_entity }
-      end
+    if @url.save
+      set_url_in_session
+      # still need to respond with proper success message
+      respond_with @url
+    else
+      # still need to respond with proper error message
+      render json: @url.errors, status: :unprocessable_entity
     end
   end
 
