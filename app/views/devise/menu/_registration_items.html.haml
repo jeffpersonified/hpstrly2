@@ -1,0 +1,4 @@
+- if user_signed_in?
+  = link_to('edit account', edit_user_registration_path)
+- else
+  = link_to('sign up', new_user_registration_path)

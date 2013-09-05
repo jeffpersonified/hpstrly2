@@ -21,6 +21,12 @@
     = javascript_include_tag "google_analytics" #if Rails.env.production?  # Commented out for testing
 
   %body
+    %nav.header
+      %ul
+        %li.logo= link_to( image_tag('logo_small.png'), root_path)
+        %li= render 'devise/menu/registration_items'
+        %li= render 'devise/menu/login_items'
+
     %p.notice= notice
     %p.alert= alert
 
