@@ -51,9 +51,9 @@ $em-base: 16 !default;
 
 $default-float: left;
 
-// $body-bg: #fff;
-// $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-bg: rgba(243, 243, 240, 0.50);
+$body-font-color: #6f6565;
+$body-font-family: 'Josefin Slab', serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -67,14 +67,14 @@ $default-float: left;
 
 // Colors
 
-// $primary-color: #2ba6cb;
+$primary-color: #D11010;
 // $secondary-color: #e9e9e9;
-// $alert-color: #c60f13;
+$alert-color: #F2DEDE;
 // $success-color: #5da423;
 
 // Make sure border radius matches unless we want it different.
 
-// $global-radius: 3px;
+$global-radius: 6px;
 // $global-rounded: 1000px;
 
 // Inset shadow shiny edges and depressions.
@@ -160,10 +160,10 @@ $default-float: left;
 
 // Control header font styles
 
-// $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: 'Josefin Slab', serif;
 // $header-font-weight: bold;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: $body-font-color;
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;
@@ -278,7 +278,7 @@ $default-float: left;
 
 // We use this to set the base for lots of form spacing and positioning styles
 
-// $form-spacing: emCalc(16);
+$form-spacing: emCalc(16);
 
 // We use these to style the labels in different ways
 
@@ -289,7 +289,7 @@ $default-float: left;
 // $form-label-bottom-margin: emCalc(3);
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
-// $input-font-size: emCalc(14);
+$input-font-size: emCalc(18);
 // $input-bg-color: #fff;
 // $input-focus-bg-color: darken(#fff, 2%);
 // $input-border-color: darken(#fff, 20%);
