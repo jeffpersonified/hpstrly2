@@ -1301,3 +1301,24 @@ $input-font-size: emCalc(18);
 // $topbar-sticky-class: ".sticky";
 
 @import 'foundation';
+
+.header {
+  margin-top: .5em;
+  font-size: 1.15em;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
+
+  a.logo img {
+    width: 6em;
+  }
+
+  .pull-left {
+    float: left;
+  }
+
+  .pull-right {
+    float: right;
+  }
+}
