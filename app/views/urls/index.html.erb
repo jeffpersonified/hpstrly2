@@ -1,32 +1,26 @@
 <div ng-controller='UrlCtrl'>
   <%= render 'form' %>
-  <h1>Urls</h1>
-  <ul>
-    <li ng-repeat="url in urls">
-      {{ url.original_url }}
-    </li>
-  </ul>
+  <h2>Your links</h2>
+  <table>
+    <thead>
+      <tr>
+        <th width="200">URL</th>
+        <th width="150">Short URL</th>
+        <th width="150">Page Views</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="url in urls">
+        <td>
+          {{ url.original_url }}
+        </td>
+        <td>
+          {{ url.short_url }}
+        </td>
+        <td>
+          {{ url.page_views }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-<table>
-  <thead>
-    <tr>
-      <th width="200">URL</th>
-      <th width="150">Short URL</th>
-      <th width="150">Page Views</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td ng-repeat-start="url in urls" >
-        {{ url.original_url }}
-      </td>
-      <td>
-        {{ url.short_url }}
-      </td>
-      <td ng-repeat-end >
-        {{ url.page_views }}
-      </td>
-    </tr>
-  </tbody>
-</table>
