@@ -8,6 +8,7 @@ gem 'pg'
 
 # server
 gem 'thin'
+gem 'rails_12factor', group: :production
 
 # auth
 gem 'devise'
