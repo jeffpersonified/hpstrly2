@@ -1,3 +1,60 @@
-// Place all the styles related to the urls controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'foundation_and_overrides';
+
+#header {
+  margin-top: .5em;
+  font-size: 1.15em;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
+
+  a.logo img {
+    width: 6em;
+  }
+
+  .pull-left {
+    float: left;
+  }
+
+  .pull-right {
+    float: right;
+  }
+}
+
+.stats {
+  padding: .4em 1.25em;
+  h5 {
+    margin-bottom: 0.325em;
+    margin-top: 0.4em;
+  }
+  #clipboard_link {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    left: -.5em;
+    width: 4em;
+    height: 4em;
+    padding-top: 0.5em;
+  }
+  .row:hover {
+    background-color: darken($panel-bg, 4%);
+    @media #{$small} {
+      #clipboard_link {
+        display: block;
+      }
+    }
+  }
+  #page_views {
+    text-align: right;
+  }
+  #short_url h5 {
+    color: $anchor-font-color;
+    &:hover {
+      color: $anchor-font-color-hover;
+    }
+  }
+}
+
+#link_header {
+  text-align: center;
+}

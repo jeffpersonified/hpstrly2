@@ -1,5 +1,11 @@
-<form ng-submit='addUrl()'>
-  <input type='text' ng-model='newUrl.original_url' placeholder='Paste original link'>
-  <input type='text' ng-model='newUrl.short_url' placeholder='Customize the shortened URL?'>
-  <input type='submit' value='Beer Me' class='button radius'>
+<form ng-submit='addUrl()' class='row'>
+  <div class='large-6 small-12 columns'>
+    <input type='text' ng-model='newUrl.original_url' placeholder='Paste original link'>
+  </div>
+  <div class='large-4 small-12 columns'>
+    <input type='text' ng-model='newUrl.short_url' placeholder='Customize the shortened URL?'>
+  </div>
+  <div class='large-2 small-12 columns'>
+    <input type='submit' value='Beer Me' class='button radius small-12 columns'>
+  </div>
 </form>
