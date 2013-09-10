@@ -31,16 +31,20 @@
     display: none;
     cursor: pointer;
     position: absolute;
-    left: -.5em;
     width: 4em;
     height: 4em;
     padding-top: 0.5em;
+    right: -1em;
+    @media (max-width:"#{$small-screen}") {
+      display: block;
+    }
   }
   .row:hover {
     background-color: darken($panel-bg, 4%);
     @media #{$small} {
       #clipboard_link {
         display: block;
+        left: -.5em;
       }
     }
   }
