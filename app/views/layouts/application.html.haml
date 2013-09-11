@@ -20,9 +20,8 @@
     = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"
     = javascript_include_tag "vendor/custom.modernizr"
     = javascript_include_tag "google_analytics" #if Rails.env.production?  # Commented out for testing
+    = favicon_link_tag       "/favicon.ico"
     = csrf_meta_tags
-
-
   %body
     .row
       .large-12.columns
