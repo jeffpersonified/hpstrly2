@@ -52,9 +52,14 @@
     width: 13em;
   }
   #logo {
-    margin: 3em 0 1.5em;
+    @media (min-width: 768px) {
+      margin: 3em 0 1.5em;
+    }
     img {
       width: 14em;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
   }
 }
@@ -73,6 +78,9 @@
 
 #sriracha {
   text-align: center;
+  @media (max-width: 768px) {
+    margin-bottom: 2em;
+  }
   .subheader {
     margin-top: 0;
   }
@@ -111,8 +119,8 @@
     display: none;
     cursor: pointer;
     position: absolute;
-    width: 4em;
-    height: 4em;
+    width: 2em;
+    height: 2em;
     padding-top: 0.5em;
     right: -1em;
   }

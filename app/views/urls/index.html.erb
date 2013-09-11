@@ -1,6 +1,6 @@
 <div id='sightglass'>
   <div class='row' id='logo'>
-    <div class='large-8 small-12 small-centered columns'>
+    <div class='large-8 medium-5 small-7 small-centered columns'>
       <%= image_tag('logo_large.png', class: 'small-6 columns') %>
       <h2 id='blinky' class='hide-for-small'>/
           <span class="pbr"> helvetica_leggings_PBR    </span>
@@ -11,7 +11,6 @@
       </h2>
     </div>
   </div>
-
   <div class='row' id='sriracha'>
     <div class='small-7 small-centered columns'>
       <h3 class='subheader'>a hipster url shortener</h3>
@@ -28,7 +27,7 @@
     <h3 id='link_header' class='subheader'>your links</h3>
     <div class='panel stats'>
       <div ng-repeat="url in urls" class='row'>
-        <i class="icon-link" id='clipboard_link'></i>
+        <i class="icon-link" id='clipboard_link' data-tooltip class="has-tip tip-left" title="click to copy to clipboard"></i>
         <div class='large-6 hide-for-small columns' id='original_url'>
           <h5 class='subheader'>{{ url.original_url }}</h5>
         </div>
