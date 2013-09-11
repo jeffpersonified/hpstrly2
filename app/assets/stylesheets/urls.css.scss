@@ -74,6 +74,11 @@
 
 #dolo {
   @include delayIn(2.5s);
+  .subheader {
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden
+  }
 }
 
 #sriracha {
