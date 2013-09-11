@@ -1,15 +1,7 @@
-app = angular.module('Hpstrly', ['ngResource'])
+$ ->
+  fadeText = (selector) ->
+    $("#{selector}").fadeIn(500).delay(2500).fadeOut 500, ->
+      $(this).appendTo $(this).parent()
+      fadeText(selector)
 
-# Configure app to allow form submissions
-# without Rails form helpers
-app.config ($routeProvider, $httpProvider) ->
-  $httpProvider.defaults.headers.common["X-CSRF-Token"] = $("meta[name=csrf-token]").attr("content")
-
-# Url Controller
-@UrlCtrl = ($scope, $resource) ->
-  Url = $resource('/urls/:id')
-  $scope.urls = Url.query()
-  $scope.addUrl = ->
-    url = Url.save($scope.newUrl)
-    $scope.urls.push(url)
-    $scope.newUrl = {}
+  fadeText('#blinky .pbr:hidden:first')

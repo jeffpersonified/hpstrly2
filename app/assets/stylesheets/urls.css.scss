@@ -1,8 +1,88 @@
 @import 'foundation_and_overrides';
 
-#header {
+// CSS3 animations
+
+@keyframes fadein {
+  from { opacity: 0; } to { opacity:1; }
+}
+
+@-moz-keyframes fadein {
+  from { opacity: 0; } to { opacity:1; }
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; } to { opacity:1; }
+}
+
+@-o-keyframes fadein {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@mixin delayIn($delay) {
+  opacity:0;
+
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
+
+  // Ensures animation remains at final keyframe value (opacity: 1)
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+
+// Meat and potatoes
+
+#link_header {
+  text-align: center;
+}
+
+#sightglass {
+  @include delayIn(.5s);
+  #blinky {
+    margin-bottom: 0;
+    position: absolute;
+    left: 6.5em;
+    width: 13em;
+  }
+  #logo {
+    margin: 3em 0 1.5em;
+    img {
+      width: 14em;
+    }
+  }
+}
+
+.pbr {
+  display: none;
+}
+
+#fourbarrel {
+  @include delayIn(1.5s);
+}
+
+#dolo {
+  @include delayIn(2.5s);
+}
+
+#sriracha {
+  text-align: center;
+  .subheader {
+    margin-top: 0;
+  }
+}
+
+#fixie {
+  @include delayIn(.2s);
   margin-top: .5em;
   font-size: 1.15em;
+
 
   @media (max-width: 768px) {
     font-size: 1em;
@@ -35,9 +115,6 @@
     height: 4em;
     padding-top: 0.5em;
     right: -1em;
-    @media (max-width:"#{$small-screen}") {
-      display: block;
-    }
   }
   .row:hover {
     background-color: darken($panel-bg, 4%);
@@ -57,8 +134,4 @@
       color: $anchor-font-color-hover;
     }
   }
-}
-
-#link_header {
-  text-align: center;
 }

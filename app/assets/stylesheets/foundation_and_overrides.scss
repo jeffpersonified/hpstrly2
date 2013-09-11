@@ -220,7 +220,7 @@ $subheader-bottom-margin: .3em;
 // $hr-border-width: 1px;
 // $hr-border-style: solid;
 // $hr-border-color: #ddd;
-// $hr-margin: emCalc(20);
+$hr-margin: emCalc(30);
 
 // Style lists
 
@@ -344,7 +344,7 @@ $input-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
 
 // We use these to build padding for buttons.
 
-// $button-med: emCalc(12);
+$button-med: emCalc(11);
 // $button-tny: emCalc(7);
 // $button-sml: emCalc(9);
 // $button-lrg: emCalc(16);
