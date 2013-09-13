@@ -81,6 +81,11 @@
   }
 }
 
+#fixed_gear {
+  @include delayIn(2.5s);
+  margin-top: 3em;
+}
+
 #sriracha {
   text-align: center;
   @media (max-width: 768px) {
@@ -112,6 +117,16 @@
   .pull-right {
     float: right;
   }
+}
+
+.stats .row.empty {
+  h5 {
+    color: lighten($body-font-color, 15%);
+  }
+  &:hover {
+    background-color: $body-bg;
+  }
+  text-align: center;
 }
 
 .stats {

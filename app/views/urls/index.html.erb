@@ -26,17 +26,23 @@
     <hr>
     <h3 id='link_header' class='subheader'>your links</h3>
     <div class='panel stats'>
+      <div class='row empty' ng-show="!urls.length">
+        <div class='large-12 small-12 columns'>
+          <h5 class='subheader'>you're not from around here, are you? you have no shortened urls.</h5>
+        </div>
+      </div>
       <div ng-repeat="url in urls" class='row'>
-        <i class="icon-link" id='clipboard_link' data-tooltip class="has-tip tip-left" title="click to copy to clipboard"></i>
+        <!-- <li ng-show="!events.length">No events</li> -->
+        <i class='icon-link' id='clipboard_link' data-tooltip class="has-tip tip-left" title="click to copy to clipboard"></i>
         <div class='large-6 hide-for-small columns' id='original_url'>
           <h5 class='subheader'>{{ url.original_url }}</h5>
         </div>
-        <div class='large-5 small-12 columns' id='short_url'>
+        <div class='large-5 small-10 columns' id='short_url'>
           <a ng-href="/{{ url.short_url }}"/>
             <h5 class='subheader'>{{ url.short_url }}</h5>
           </a>
         </div>
-        <div class='large-1 hide-for-small columns' id='page_views'>
+        <div class='large-1 small-2 columns' id='page_views'>
           <h5 class='subheader'>{{ url.page_views }}</h5>
         </div>
       </div>
