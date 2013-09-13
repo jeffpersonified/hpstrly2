@@ -1,7 +1,7 @@
 app = angular.module('Hpstrly', ['ngResource'])
 
 # Dependency injection for minified Angular
-app.$inject = ['$scope', '$http', '$routeProvider', '$httpProvider'];
+app.$inject = ['$scope', '$http', '$routeProvider', '$httpProvider']
 
 # Configure app to allow form submissions
 # without Rails form helpers
