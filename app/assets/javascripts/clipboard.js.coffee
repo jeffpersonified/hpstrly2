@@ -1,0 +1,1 @@
+clip = new ZeroClipboard($("#my-button"))
