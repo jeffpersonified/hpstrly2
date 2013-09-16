@@ -4,10 +4,10 @@
     %li.pull-right= render 'devise/menu/registration_items'
     %li.pull-right= render 'devise/menu/login_items'
   - if notice
-    %p.alert-box.secondary
+    %p.alert-box.secondary.radius
       = notice
-      / %a.close{ href: '#' }&times;
+      %a.close{:href => ""} &times;
   - if alert
-    %p.alert-box.alert
+    %p.alert-box.alert.radius
       = alert
-      / %a.close{ href: '#' }&times;
+      %a.close{:href => ""} &times;
