@@ -1,0 +1,12 @@
+@import 'foundation_and_overrides';
+
+label {
+  text-transform: lowercase;
+  &.spacing {
+    background-color: $body-bg;
+  }
+}
+
+input.devise_submit {
+  margin-top: 1em;
+}

@@ -1,17 +1,19 @@
 .row
-  .large-5.large-centered.columns.user_form
-    %h2.hide Sign in
-    = simple_form_for resource, as: resource_name, url: session_path(resource_name), validate: true do |f|
-      = f.input :login, :autofocus => true, placeholder: "login"
-      = f.input :password, as: :password, placeholder: "password"
-      =# so this isn't actually working
-      =#.switch.large.round
-      =#  %input#z{:checked => "", :name => "switch-z", :type => "radio"}/
-      =#  %label{:for => "z", :onclick => ""} remember me?
-      =#  %input#z1{:name => "switch-z", :type => "radio"}/
-      =#  %label{:for => "z1", :onclick => ""} ok!
-      =#  %span
+  .large-7.large-centered.columns.user_form
+    %h2 sign in
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .row
+        .large-12.small-12.columns
+          = f.label :email
+          = f.email_field :email, autofocus: true
+      .row
+        .large-8.small-12.columns
+          = f.label :password
+          = f.password_field :password
+        .large-4.small-12.columns
+          = f.submit "Sign in", class: 'button radius small-12 devise_submit'
       - if devise_mapping.rememberable?
-        = f.input :remember_me, as: :check_boxes
-      = f.submit "Sign in", { class: "radius button small-12 columns"}
-    = render "devise/shared/links"
+        .hide
+          = f.check_box :remember_me, checked: true
+          = f.label :remember_me
+      = render "devise/shared/links"
