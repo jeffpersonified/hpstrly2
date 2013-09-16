@@ -1,5 +1,5 @@
-.row
-  .large-7.large-centered.columns.user_form
+.row.devise_form
+  .large-7.large-centered.columns
     %h2 sign in
     = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       .row
@@ -16,4 +16,5 @@
         .hide
           = f.check_box :remember_me, checked: true
           = f.label :remember_me
-      = render "devise/shared/links"
+      .devise_links
+        = render "devise/shared/links"

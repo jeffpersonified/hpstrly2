@@ -1,8 +1,15 @@
-.row
-  .large-5.large-centered.columns.user_form
-    %h2 Forgot your password?
-    = simple_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post } do |f|
-      = devise_error_messages!
-      = f.input :login, :autofocus => true, placeholder: "login"
-      = f.submit "Send me reset instructions", { class: "small-12 radius button" }
-    = render "devise/shared/links"
+.row.devise_form
+  .large-7.large-centered.columns
+    %h2 forgot your password?
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      .row
+        .large-12.small-12.columns
+          = devise_error_messages!
+      .row
+        .large-8.small-12.columns
+          = f.label :email
+          = f.email_field :email, :autofocus => true
+        .large-4.small-12.columns
+          = f.submit "reset password", class: 'button radius small-12 devise_submit'
+      .devise_links
+        = render "devise/shared/links"

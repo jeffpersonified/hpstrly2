@@ -10,3 +10,11 @@ label {
 input.devise_submit {
   margin-top: 1em;
 }
+
+.devise_links {
+  @extend input.devise_submit;
+}
+
+.row .row.devise_form {
+  margin-top: 5em;
+}

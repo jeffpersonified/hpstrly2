@@ -1301,3 +1301,10 @@ $tooltip-font-weight: normal;
 // $topbar-sticky-class: ".sticky";
 
 @import 'foundation';
+
+.button.secondary {
+   color: lighten($body-font-color, 15%);
+  &:hover {
+    color: $body-font-color;
+  }
+}
