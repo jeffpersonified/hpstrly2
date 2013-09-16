@@ -1,15 +1,6 @@
-- [ ] a task list item
-- [ ] list syntax required
-- [ ] normal **formatting**, @mentions, #1234 refs
-- [ ] incomplete
-- [x] completed
-
-
-
 hpstrly2
 ========
 Brushing off an URL shortener I built during Dev Bootcamp to work with angular.js, and revamp the overall design
-
 
 
 Todo:
