@@ -26,26 +26,10 @@
   %body
     .row
       .large-12.columns
-        %nav#fixie
-          %ul.inline-list
-            %li= link_to( image_tag('logo_small.png'), root_path, class: 'logo')
-            %li.pull-right= render 'devise/menu/registration_items'
-            %li.pull-right= render 'devise/menu/login_items'
-          - if notice
-            %p.alert-box.secondary
-              = notice
-              / %a.close{ href: '#' }&times;
-          - if alert
-            %p.alert-box.alert
-              = alert
-              / %a.close{ href: '#' }&times;
+        = render 'layouts/header'
 
         = yield
 
-    .row#fixed_gear
-      .large-12.columns
-        Made by
-        %a{ href: 'http://jeffmatthewsmith.com'}
-          @jeffpersonified
+        = render 'layouts/footer'
     = javascript_include_tag "application"
     = debug(params) if Rails.env.development?
